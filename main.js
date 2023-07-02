@@ -7,12 +7,43 @@
 document.body.addEventListener("click", (e) => {
   const positionX = e.clientX;
   const positionY = e.clientY;
+  let color = "red";
+
   console.log(positionX, positionY);
   if (positionX % 2 === 0 && positionY % 2 === 0) {
-    document.body.style.backgroundColor = "red";
+    color = "red";
   } else if (positionX % 2 !== 0 && positionY % 2 !== 0) {
-    document.body.style.backgroundColor = "blue";
+    color = "blue";
   } else {
-    document.body.style.backgroundColor = "green";
+    color = "green";
   }
+
+  document.body.style.backgroundColor = color;
 });
+
+//document.body.addEventListener('click', (e) => {
+
+// const x = e.clientX;
+// const y = e.clientY;
+// // przypadek gdy oba parzyste (domyślny);
+// let color = "red";
+
+// if (x % 2 ^ y % 2) {
+//     // przypadek gdy obie współrzędne mają różną parzystość
+//     color = 'green';
+// } else if (x % 2 && y % 2) {
+//     // przypadek gdy obie współrzędne są nieparzyste
+//     color = 'blue';
+// }
+
+// console.log(`"${x}, ${y}"`) //kontrola ;)
+// document.body.style.backgroundColor = color;
+// });
+
+// document.body.addEventListener('click', (e) => {
+
+//     const color = ["red", "green", "blue"];
+//     const index = e.clientX % 2 + e.clientY % 2;
+
+//     document.body.style.backgroundColor = color[index];
+// });
